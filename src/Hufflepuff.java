@@ -10,4 +10,27 @@ public class Hufflepuff extends Hogwarts {
         this.honest = honest;
         this.facultyName = "Пуффендуй";
     }
+
+    public int getIndustrious() {
+        return industrious;
+    }
+
+    public int getFaithful() {
+        return faithful;
+    }
+
+    public int getHonest() {
+        return honest;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", Трудолюбие = " + industrious +
+                ", Верность = " + faithful +
+                ", Честность = " + honest + ".";
+    }
+
+    public int getSumPersonalProperties() {
+        return getIndustrious() + getFaithful() + getHonest();
+    }
 }

@@ -18,8 +18,35 @@ public class Main {
         Ravenclaw ravenclaw1 = new Ravenclaw("Падма", "Патил", 66, 77, 89, 99, 33, 45);
         Ravenclaw ravenclaw2 = new Ravenclaw("Маркус", "Белби", 55, 87, 55, 33, 56, 67);
 
+        Hogwarts hogwarts = new Hogwarts();
 
-
+        System.out.println("====Гриффиндор====");
+        gryffindor.showStudents();
+        gryffindor1.showStudents();
+        gryffindor2.showStudents();
+        System.out.println("====Пуффендуй====");
+        hufflepuff.showStudents();
+        hufflepuff1.showStudents();
+        hufflepuff2.showStudents();
+        System.out.println("====Слизерин====");
+        slytherin.showStudents();
+        slytherin1.showStudents();
+        slytherin2.showStudents();
+        System.out.println("====Когтевран====");
+        ravenclaw.showStudents();
+        ravenclaw1.showStudents();
+        ravenclaw2.showStudents();
+        System.out.println("================================");
+        hogwarts.compareStudents(gryffindor2);
+        hogwarts.compareStudents(slytherin);
+        hogwarts.compareStudents(ravenclaw1);
+        hogwarts.compareStudents(hufflepuff);
+        System.out.println("\n================================");
+        hogwarts.studentEquals(gryffindor2);
+        hogwarts.studentEquals(slytherin);
+        hogwarts.studentEquals(ravenclaw1);
+        hogwarts.studentEquals(hufflepuff);
+        System.out.println("\n================================");
     }
 
 

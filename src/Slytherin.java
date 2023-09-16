@@ -16,4 +16,36 @@ public class Slytherin extends Hogwarts {
         this.facultyName = "Слизерин";
     }
 
+    public int getCunning() {
+        return cunning;
+    }
+
+    public int getDetermination() {
+        return determination;
+    }
+
+    public int getAmbition() {
+        return ambition;
+    }
+
+    public int getResourcefulness() {
+        return resourcefulness;
+    }
+
+    public int getDesireForPower() {
+        return desireForPower;
+    }
+
+    public int getSumPersonalProperties() {
+        return getCunning() + getDetermination() + getAmbition() + getResourcefulness() + getDesireForPower();
+    }
+
+    public String toString() {
+        return super.toString() + " Хитрость = " + cunning +
+                ", Решительность = " + determination +
+                ", Амбициозность = " + ambition +
+                ", Находчивость = " + resourcefulness +
+                ", Жажда власти = " + desireForPower + ".";
+    }
+
 }
