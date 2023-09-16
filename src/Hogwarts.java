@@ -32,4 +32,8 @@ public class Hogwarts {
         return powerOfMagic;
     }
 
+
+
+
+
 }
