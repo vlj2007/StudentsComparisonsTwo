@@ -32,7 +32,11 @@ public class Hogwarts {
         return powerOfMagic;
     }
 
-    @Override
+    public String getFacultyName() {
+        return facultyName;
+    }
+
+
     public String toString() {
         return "Имя = '" + name + '\'' +
                 ", Фамилия = '" + surName + '\'' +
@@ -48,17 +52,17 @@ public class Hogwarts {
         System.out.println(toString());
     }
 
-    private void studentEqualsOnMagicProperties(Hogwarts a1, Hogwarts a2) {
-        if (a1.getSumPersonalProperties() > a2.getSumPersonalProperties()) {
+    protected void studentEqualsOnMagicProperties(Hogwarts a1, Hogwarts hogwarts) {
+        if (a1.getSumPersonalProperties() > this.getSumPersonalProperties()) {
             System.out.printf("\n %s(%d) обладает большей мощностью, чем %s(%d)",
-                    a1.getName(), a1.getSumPersonalProperties(), a2.getName(), a2.getSumPersonalProperties());
+                    a1.getName(), a1.getSumPersonalProperties(), this.getName(), this.getSumPersonalProperties());
         } else {
             System.out.printf("\n %s(%d) обладает большей мощностью, чем %s(%d)",
-                    a2.getName(), a2.getSumPersonalProperties(), a1.getName(), a1.getSumPersonalProperties());
+                    this.getName(), this.getSumPersonalProperties(), a1.getName(), a1.getSumPersonalProperties());
         }
     }
 
-    public void studentEquals(Hogwarts a1) {
+    private void studentEquals(Hogwarts a1) {
         if (a1.getClass() == this.getClass()) {
             studentEqualsOnMagicProperties(a1, this);
         } else {
@@ -66,7 +70,7 @@ public class Hogwarts {
         }
     }
 
-    protected void compareStudents(Hogwarts a1) {
+    private void compareStudents(Hogwarts a1) {
         if (a1.getSumPersonalProperties() > this.getSumPersonalProperties()) {
             System.out.printf("\n %s(%d) лучший студент %s, чем %s(%d)",
                     a1.getName(), a1.getSumPersonalProperties(), a1.facultyName, this.getName(), this.getSumPersonalProperties());
@@ -75,6 +79,16 @@ public class Hogwarts {
                     this.getName(), this.getSumPersonalProperties(), this.facultyName, a1.getName(), a1.getSumPersonalProperties());
         }
     }
+
+
+
+
+
+
+
+
+
+
 
 
 

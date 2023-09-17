@@ -37,7 +37,7 @@ public class Slytherin extends Hogwarts {
     }
 
     public int getSumPersonalProperties() {
-        return getCunning() + getDetermination() + getAmbition() + getResourcefulness() + getDesireForPower();
+        return getCunning() + getDetermination() + getAmbition() + getResourcefulness() + getDesireForPower() + (getTransgress() - getPowerOfMagic());
     }
 
     public String toString() {
@@ -47,5 +47,24 @@ public class Slytherin extends Hogwarts {
                 ", Находчивость = " + resourcefulness +
                 ", Жажда власти = " + desireForPower + ".";
     }
+
+    private void studentEquals(Slytherin a1) {
+        if (a1.getClass() == this.getClass()) {
+            studentEqualsOnMagicProperties(a1, this);
+        } else {
+            studentEqualsOnMagicProperties(a1, this);
+        }
+    }
+
+    protected void compareStudents(Slytherin a1) {
+        if (a1.getSumPersonalProperties() > this.getSumPersonalProperties()) {
+            System.out.printf("\n %s(%d) лучший студент %s, чем %s(%d)",
+                    a1.getName(), a1.getSumPersonalProperties(), a1.facultyName, this.getName(), this.getSumPersonalProperties());
+        } else {
+            System.out.printf("\n %s(%d) лучший студент %s, чем %s(%d)",
+                    this.getName(), this.getSumPersonalProperties(), this.facultyName, a1.getName(), a1.getSumPersonalProperties());
+        }
+    }
+
 
 }

@@ -14,7 +14,7 @@ public class Main {
         Slytherin slytherin = new Slytherin("Драко", "Малфой", 47, 61, 45, 56, 78, 66, 22);
         Slytherin slytherin1 = new Slytherin("Грэхэм", "Монтегю", 29, 39, 28, 34, 88, 55, 89);
         Slytherin slytherin2 = new Slytherin("Грегори", "Гойл", 39, 27, 50, 77, 23, 55, 33);
-        Ravenclaw ravenclaw = new Ravenclaw("Чжоу Чанг", "Чжоу Чанг", 44, 56, 67, 77, 45, 22);
+        Ravenclaw ravenclaw = new Ravenclaw("Чжоу", "Чанг", 44, 56, 67, 77, 45, 22);
         Ravenclaw ravenclaw1 = new Ravenclaw("Падма", "Патил", 66, 77, 89, 99, 33, 45);
         Ravenclaw ravenclaw2 = new Ravenclaw("Маркус", "Белби", 55, 87, 55, 33, 56, 67);
 
@@ -36,18 +36,22 @@ public class Main {
         ravenclaw.showStudents();
         ravenclaw1.showStudents();
         ravenclaw2.showStudents();
-        System.out.println("================================");
-        hogwarts.compareStudents(gryffindor2);
-        hogwarts.compareStudents(slytherin);
-        hogwarts.compareStudents(ravenclaw1);
-        hogwarts.compareStudents(hufflepuff);
-        System.out.println("\n================================");
-        hogwarts.studentEquals(gryffindor2);
-        hogwarts.studentEquals(slytherin);
-        hogwarts.studentEquals(ravenclaw1);
-        hogwarts.studentEquals(hufflepuff);
-        System.out.println("\n================================");
+        System.out.println("\n====== Проверка по личным качествам университета ==========================");
+        gryffindor2.compareStudents(gryffindor1); //+++
+        ravenclaw.compareStudents(ravenclaw2);
+        slytherin.compareStudents(slytherin2);
+        hufflepuff.compareStudents(hufflepuff1);
+        slytherin2.compareStudents(slytherin1);
+
+        System.out.println("\n====== Проверка по магии и трангрес ==========================");
+
+        hogwarts.studentEqualsOnMagicProperties(gryffindor1,ravenclaw1);
+        slytherin.studentEqualsOnMagicProperties(slytherin2, slytherin1);
+
+        hufflepuff2.studentEqualsOnMagicProperties(slytherin1, hufflepuff2);
+
+
+
+
     }
-
-
 }
