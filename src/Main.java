@@ -50,8 +50,5 @@ public class Main {
 
         hufflepuff2.studentEqualsOnMagicProperties(slytherin1, hufflepuff2);
 
-
-
-
     }
 }
