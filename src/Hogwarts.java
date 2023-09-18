@@ -10,11 +10,10 @@ public class Hogwarts {
         this.surName = surName;
         this.transgress = transgress;
         this.powerOfMagic = powerOfMagic;
-    }
-
-    public Hogwarts() {
+        this.facultyName = getFacultyName();
 
     }
+
 
     public String getName() {
         return name;
@@ -48,50 +47,40 @@ public class Hogwarts {
         return 0;
     }
 
+
+    public int getSumProperties() {
+        return getPowerOfMagic() + getTransgress();
+    }
+
+
     public void showStudents() {
         System.out.println(toString());
     }
 
-    protected void studentEqualsOnMagicProperties(Hogwarts a1, Hogwarts hogwarts) {
-        if (a1.getSumPersonalProperties() > this.getSumPersonalProperties()) {
-            System.out.printf("\n %s(%d) обладает большей мощностью, чем %s(%d)",
-                    a1.getName(), a1.getSumPersonalProperties(), this.getName(), this.getSumPersonalProperties());
+
+    private void studentEqualsOnMagicProperties(Hogwarts student) {
+        if (student.getSumProperties() > this.getSumProperties()) {
+            System.out.printf(("\n %s (%d) лучший студент, чем %s (%d)"), student.getName(), student.getSumProperties(), this.getName(), this.getSumProperties());
+
         } else {
-            System.out.printf("\n %s(%d) обладает большей мощностью, чем %s(%d)",
-                    this.getName(), this.getSumPersonalProperties(), a1.getName(), a1.getSumPersonalProperties());
+            System.out.printf(("\n %s (%d) лучший студент, чем %s (%d)"), this.getName(), this.getSumProperties(), student.getName(), student.getSumProperties());
         }
     }
 
-    private void studentEquals(Hogwarts a1) {
-        if (a1.getClass() == this.getClass()) {
-            studentEqualsOnMagicProperties(a1, this);
+    protected void studentEquals(Hogwarts student) {
+        if (student.getFacultyName().equals(this.getFacultyName())) {
+            compareStudents(student);
         } else {
-            studentEqualsOnMagicProperties(a1, this);
+            studentEqualsOnMagicProperties(student);
         }
     }
 
-    private void compareStudents(Hogwarts a1) {
-        if (a1.getSumPersonalProperties() > this.getSumPersonalProperties()) {
-            System.out.printf("\n %s(%d) лучший студент %s, чем %s(%d)",
-                    a1.getName(), a1.getSumPersonalProperties(), a1.facultyName, this.getName(), this.getSumPersonalProperties());
+    private void compareStudents(Hogwarts student) {
+        if (student.getSumPersonalProperties() > this.getSumPersonalProperties()) {
+            System.out.printf("\n %s (%d) лучший студент %s, чем %s (%d)", student.getName(), student.getSumPersonalProperties(), student.getFacultyName(), this.getName(), this.getSumPersonalProperties());
         } else {
-            System.out.printf("\n %s(%d) лучший студент %s, чем %s(%d)",
-                    this.getName(), this.getSumPersonalProperties(), this.facultyName, a1.getName(), a1.getSumPersonalProperties());
+            System.out.printf("\n %s (%d) лучший студент %s, чем %s (%d)", this.getName(), this.getSumPersonalProperties(), this.getFacultyName(), student.getName(), student.getSumPersonalProperties());
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

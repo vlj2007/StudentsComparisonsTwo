@@ -18,8 +18,6 @@ public class Main {
         Ravenclaw ravenclaw1 = new Ravenclaw("Падма", "Патил", 66, 77, 89, 99, 33, 45);
         Ravenclaw ravenclaw2 = new Ravenclaw("Маркус", "Белби", 55, 87, 55, 33, 56, 67);
 
-        Hogwarts hogwarts = new Hogwarts();
-
         System.out.println("====Гриффиндор====");
         gryffindor.showStudents();
         gryffindor1.showStudents();
@@ -36,19 +34,18 @@ public class Main {
         ravenclaw.showStudents();
         ravenclaw1.showStudents();
         ravenclaw2.showStudents();
+
         System.out.println("\n====== Проверка по личным качествам университета ==========================");
-        gryffindor2.compareStudents(gryffindor1); //+++
-        ravenclaw.compareStudents(ravenclaw2);
-        slytherin.compareStudents(slytherin2);
-        hufflepuff.compareStudents(hufflepuff1);
-        slytherin2.compareStudents(slytherin1);
+        gryffindor2.studentEquals(gryffindor1);
+        ravenclaw.studentEquals(ravenclaw2);
+        slytherin.studentEquals(slytherin2);
+        hufflepuff.studentEquals(hufflepuff1);
+        slytherin2.studentEquals(slytherin1);
 
         System.out.println("\n====== Проверка по магии и трангрес ==========================");
-
-        hogwarts.studentEqualsOnMagicProperties(gryffindor1,ravenclaw1);
-        slytherin.studentEqualsOnMagicProperties(slytherin2, slytherin1);
-
-        hufflepuff2.studentEqualsOnMagicProperties(slytherin1, hufflepuff2);
+        slytherin.studentEquals(hufflepuff2);
+        hufflepuff2.studentEquals(ravenclaw2);
+        slytherin2.studentEquals(gryffindor1);
 
     }
 }
