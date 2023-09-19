@@ -5,12 +5,12 @@ public class Hogwarts {
     private int transgress;
     private int powerOfMagic;
 
-    public Hogwarts(String name, String surName, int transgress, int powerOfMagic) {
+    public Hogwarts(String name, String surName, int transgress, int powerOfMagic, String faculty) {
         this.name = name;
         this.surName = surName;
         this.transgress = transgress;
         this.powerOfMagic = powerOfMagic;
-        this.facultyName = getFacultyName();
+        this.facultyName = faculty;
 
     }
 
@@ -67,7 +67,7 @@ public class Hogwarts {
         }
     }
 
-    protected void studentEquals(Hogwarts student) {
+    public void studentEquals(Hogwarts student) {
         if (student.getFacultyName().equals(this.getFacultyName())) {
             compareStudents(student);
         } else {
